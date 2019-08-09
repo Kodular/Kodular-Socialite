@@ -20,7 +20,7 @@ class Provider extends AbstractProvider
      */
     protected function getAuthUrl($state)
     {
-        return $this->buildAuthUrlFromBase('https://auth.kodular.io/ska/authorize', $state);
+        return $this->buildAuthUrlFromBase('https://auth.kodular.io/oska/authorize', $state);
     }
 
     /**
@@ -30,7 +30,7 @@ class Provider extends AbstractProvider
      */
     protected function getTokenUrl()
     {
-        return 'https://auth.kodular.io/ska/access_token';
+        return 'https://auth.kodular.io/oska/access_token';
     }
 
     /**
