@@ -39,19 +39,6 @@ class Provider extends AbstractProvider
     {
         return 'https://auth.kodular.io/oska/access_token';
     }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function getAccessToken($code)
-    {
-        $response = $this->getHttpClient()->post($this->getTokenUrl(), [
-            'headers' => ['Authorization' => 'Basic ' . base64_encode($this->clientId . ':' . $this->clientSecret)],
-            'body'    => $this->getTokenFields($code),
-        ]);
-        
-        return $this->parseAccessToken($response->getBody());
-    }
 
     /**
      * Get the raw user for the given access token.
