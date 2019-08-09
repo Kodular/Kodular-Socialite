@@ -37,7 +37,7 @@ class Provider extends AbstractProvider
      */
     protected function getTokenUrl()
     {
-        return 'https://auth.kodular.io/oska/access_token';
+        return 'https://auth.kodular.io/oska/token';
     }
 
     /**
