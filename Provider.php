@@ -48,7 +48,13 @@ class Provider extends AbstractProvider
      */
     protected function getUserByToken($token)
     {
-        // TODO: Implement getUserByToken() method.
+        $response = $this->getHttpClient()->get('https://auth.kodular.io/api/me', [
+            'headers' => [
+                'Authorization' => 'Bearer ' . $token,
+            ],
+        ]);
+
+        return json_decode($response->getBody(), true);
     }
 
     /**
