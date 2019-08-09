@@ -61,4 +61,14 @@ class Provider extends AbstractProvider
     {
         // TODO: Implement mapUserToObject() method.
     }
+    
+    /**
+     * {@inheritdoc}
+     */
+    protected function getTokenFields($code)
+    {
+        return array_merge(parent::getTokenFields($code), [
+            'grant_type' => 'authorization_code',
+        ]);
+    }
 }
