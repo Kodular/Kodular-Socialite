@@ -11,6 +11,13 @@ class Provider extends AbstractProvider
      * Unique Provider Identifier.
      */
     const IDENTIFIER = 'KODULAR';
+    
+    /**
+     * {@inheritdoc}
+     */
+    protected $scopes = [
+        'read_profile',
+    ];
 
     /**
      * Get the authentication URL for the provider.
