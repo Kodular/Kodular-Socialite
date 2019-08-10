@@ -2,6 +2,7 @@
 
 namespace SocialiteProviders\Kodular;
 
+use GuzzleHttp\ClientInterface;
 use SocialiteProviders\Manager\OAuth2\AbstractProvider;
 use SocialiteProviders\Manager\OAuth2\User;
 
