@@ -73,6 +73,24 @@ class Provider extends AbstractProvider
             'avatar' => $user['picture'],
         ]);
     }
+
+    /**
+     * Get the access token response for the given refresh token.
+     *
+     * @param  string  $refreshToken
+     * @return array
+     */
+    public function getRefreshTokenResponse($refreshToken)
+    {
+        $postKey = (version_compare(ClientInterface::VERSION, '6') === 1) ? 'form_params' : 'body';
+
+        $response = $this->getHttpClient()->post($this->getTokenUrl(), [
+            'headers' => ['Accept' => 'application/json'],
+            $postKey => $this->getTokenFields($refreshToken, 'refresh_token'),
+        ]);
+
+        return json_decode($response->getBody(), true);
+    }
     
     /**
      * Get the POST fields for the token request.
@@ -80,10 +98,10 @@ class Provider extends AbstractProvider
      * @param  string  $code
      * @return array
      */
-    protected function getTokenFields($code)
+    protected function getTokenFields($code, $grantType = 'authorization_code')
     {
         return array_merge(parent::getTokenFields($code), [
-            'grant_type' => 'authorization_code',
+            'grant_type' => $grantType,
         ]);
     }
 }
