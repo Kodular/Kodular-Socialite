@@ -87,7 +87,7 @@ class Provider extends AbstractProvider
 
         $response = $this->getHttpClient()->post($this->getTokenUrl(), [
             'headers' => ['Accept' => 'application/json'],
-            $postKey => $this->getTokenFields($refreshToken, 'refresh_token'),
+            $postKey => $this->getRefreshTokenFields($refreshToken),
         ]);
 
         return json_decode($response->getBody(), true);
@@ -99,10 +99,26 @@ class Provider extends AbstractProvider
      * @param  string  $code
      * @return array
      */
-    protected function getTokenFields($code, $grantType = 'authorization_code')
+    protected function getTokenFields($code)
     {
         return array_merge(parent::getTokenFields($code), [
-            'grant_type' => $grantType,
+            'grant_type' => 'authorization_code',
         ]);
+    }
+    
+    /**
+     * Get the POST fields for the refresh token request.
+     *
+     * @param  string  $code
+     * @return array
+     */
+    protected function getRefreshTokenFields($refreshToken)
+    {
+        return [
+            'client_id' => $this->clientId,
+            'client_secret' => $this->clientSecret,
+            'refresh_token' => $refreshToken,
+            'grant_type' => 'refresh_token',
+        ];
     }
 }
