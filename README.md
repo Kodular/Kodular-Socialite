@@ -7,7 +7,7 @@ Kodular Auth Provider for Laravel Socialite
 ### Usage
 
 ```PHP
-Socialite::with('discord')->redirect();
+Socialite::with('kodular')->redirect();
 ```
 
 ## Development
