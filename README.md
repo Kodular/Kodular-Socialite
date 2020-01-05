@@ -14,8 +14,8 @@ Socialite::with('kodular')->redirect();
 
 ### Requirements
 
-- **PHP 5.6** or higher
-- **Laravel 5.6** or higher
+- **PHP 7.2** or higher
+- **Laravel 6.0** or higher
 
 ### Installation
 
@@ -28,16 +28,8 @@ Socialite::with('kodular')->redirect();
   }
 ]
 ```
-2. Add the repository to composer: `composer require kodular/socialite-kodular:master`
-3. Add the Sociale Service Provider to `config/app.php`
-```PHP
-'providers' => [
-  // a whole bunch of providers
-  // remove 'Laravel\Socialite\SocialiteServiceProvider',
-  \SocialiteProviders\Manager\ServiceProvider::class, // add
-];
-```
-4. Add the `SocialiteWasCalled` to `app/Providers/EventServiceProvider.php`
+2. Add the repository to composer: `composer require kodular/socialite-kodular`
+3. Add the `SocialiteWasCalled` to `app/Providers/EventServiceProvider.php`
 ```PHP
 protected $listen = [
   // a whole bunch of listeners
@@ -47,7 +39,7 @@ protected $listen = [
   ],
 ];
 ```
-5. Add the Kodular Auth settings to `config/services.php`
+4. Add the Kodular Auth settings to `config/services.php`
 ```PHP
 'kodular' => [
   'client_id' => env('KODULAR_CLIENT_ID'),
