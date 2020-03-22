@@ -1,4 +1,4 @@
-# Kodular Laravel Socialite
+# Kodular Socialite for Laravel
 
 Kodular Auth Provider for Laravel Socialite
 
@@ -19,17 +19,8 @@ Socialite::with('kodular')->redirect();
 
 ### Installation
 
-1. Add this repository to composer.json
-```PHP
-"repositories": [
-  {
-    "type": "vcs",
-    "url":  "git@github.com:kodular/socialite-kodular.git"
-  }
-]
-```
-2. Add the repository to composer: `composer require kodular/socialite-kodular`
-3. Add the `SocialiteWasCalled` to `app/Providers/EventServiceProvider.php`
+1. Add the repository to composer: `composer require kodular/kodular-socialite`
+2. Add the `SocialiteWasCalled` to `app/Providers/EventServiceProvider.php`
 ```PHP
 protected $listen = [
   // a whole bunch of listeners
@@ -39,7 +30,7 @@ protected $listen = [
   ],
 ];
 ```
-4. Add the Kodular Auth settings to `config/services.php`
+3. Add the Kodular Auth settings to `config/services.php`
 ```PHP
 'kodular' => [
   'client_id' => env('KODULAR_CLIENT_ID'),
