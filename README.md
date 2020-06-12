@@ -2,7 +2,7 @@
 
 <div align=center>
 
-![Kodular Socialite|726x608, 30%](https://i.ibb.co/DWvM00s/signup-illustration-50317127aadc.png)
+![Kodular Socialite|726x608, 30%](https://i.ibb.co/pQr9TC4/signup-illustration-50317127aadc.png)
 
 
 ### Kodular Auth Provider for Laravel Socialite
