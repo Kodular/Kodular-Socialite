@@ -21,12 +21,6 @@
 Socialite::with('kodular')->redirect();
 ```
 
-## Installation
-
-```
-composer require kodular/kodular-socialite
-```
-
 
 ## Development
 
