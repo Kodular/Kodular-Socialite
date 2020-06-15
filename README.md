@@ -1,6 +1,17 @@
 # Kodular Socialite for Laravel
 
-Kodular Auth Provider for Laravel Socialite
+<div align=center>
+
+![Kodular Socialite|726x608, 30%](https://i.ibb.co/dPsNznK/signup-illustration-50317127aadc.png)
+
+
+### Kodular Auth Provider for Laravel Socialite
+
+
+
+[![Latest Stable Version](https://poser.pugx.org/kodular/kodular-socialite/v)](//packagist.org/packages/kodular/kodular-socialite) [![Total Downloads](https://poser.pugx.org/kodular/kodular-socialite/downloads)](//packagist.org/packages/kodular/kodular-socialite) [![Latest Unstable Version](https://poser.pugx.org/kodular/kodular-socialite/v/unstable)](//packagist.org/packages/kodular/kodular-socialite) [![License](https://poser.pugx.org/kodular/kodular-socialite/license)](//packagist.org/packages/kodular/kodular-socialite)
+
+</div>
 
 ---
 
@@ -9,6 +20,7 @@ Kodular Auth Provider for Laravel Socialite
 ```PHP
 Socialite::with('kodular')->redirect();
 ```
+
 
 ## Development
 
